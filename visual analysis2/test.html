@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">   
+<html xmlns="http://www.w3.org/1999/xhtml">   
+<head>   
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />   
+<title>louis-blog >> jQuery 对checkbox的操作</title>   
+<script type='text/javascript' src="js/jquery.min.js"></script>   
+<SCRIPT LANGUAGE="JavaScript">   
+function checkbox()
+{
+var str=document.getElementsByName("aaa");
+var objarray=str.length;
+var chestr="";
+for (i=0;i<objarray;i++)
+{
+  if(str[i].checked == true)
+  {
+   chestr+=str[i].value+",";
+  }
+}
+if(chestr == "")
+{
+  alert("请先选择复选框～！");
+}
+else
+{
+  alert("复选框的值是："+chestr);
+}
+}
+
+<!--     
+-->   
+</SCRIPT>   
+</HEAD>   
+ <BODY>
+  <INPUT TYPE="checkbox" NAME="aaa" value="1">1
+  <INPUT TYPE="checkbox" NAME="aaa" value="2">2
+  <INPUT TYPE="checkbox" NAME="aaa" value="3">3
+  <INPUT TYPE="checkbox" NAME="aaa" value="4">4
+  <input type="button" name="button" id="button" onclick="checkbox()" value="提交" />
+ </BODY>
+</HTML>
+</body>   
+</HTML>

@@ -1,0 +1,698 @@
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title> IDMB Visual Analysis </title>
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	<style>
+	.link {
+		stroke: #2E2E2E;
+		stroke-width: 2px;
+	}
+
+	.node {
+		stroke: #fff;
+		stroke-width: 2px;
+	}
+	.textClass {
+		stroke: #323232;
+		font-family: "Lucida Grande", "Droid Sans", Arial, Helvetica, sans-serif;
+		font-weight: normal;
+		stroke-width: .5;
+		font-size: 14px;
+	}
+	</style>
+
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
+	<script src="js/jquery.min.js"></script>
+	<meta name="author" content="pixelhint.com">
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+	<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+	
+    <script type="text/javascript">
+
+    var post_request = {"statements":[{"statement":"MATCH (n)-[r:RELATED_TO]-(n1) WHERE  not(has(n.movie)) and n.name = 'Cruise, Tom'  return n as ActorName,r as Relationship,n1 as MoviesforActor"}]};
+
+    $.ajax({
+        type: "POST",
+        accept: "application/json",
+        contentType:"application/json; charset=utf-8",
+        headers: {"Authorization":"dXNlcm5hbWU6cGFzc3dvcmQ="},
+        url: "http://localhost:7474/db/data/transaction/commit",
+        data: JSON.stringify(post_request),
+        success: function(data, textStatus, jqXHR){
+          console.log(data);
+      },
+      failure: function(msg){console.log("failed")}
+  });
+    </script>
+
+    <script>
+    $(function() {
+      $( "#slider-range" ).slider({
+         range: true,
+         min: 1920,
+         max: 2020,
+         values: [ 1920, 2020 ],
+         slide: function( event, ui ) {
+            $( "#year" ).val( ui.values[ 0 ] + "," + ui.values[ 1 ] );
+        }
+    });
+      $( "#year" ).val( $( "#slider-range" ).slider( "values", 0 ) +
+         "," + $( "#slider-range" ).slider( "values", 1 ) );
+  });
+    </script>
+    
+</Head>
+<style>
+.img{margin:0 auto;text-align:center;}
+
+p.solid {border-style: solid; text-align:center;}
+
+</style>
+2
+
+<body style="background:#4c347b;" id="body">
+	
+	<header>
+		<div class="wrapper">
+			<a href="#"><img src="img/logo.png" class="h_logo" alt="" title=""></a>
+			<nav>
+				<ul class="main_nav">
+					<li ><a href="#">Background</a></li>
+					<li><a href="#">Export</a></li>
+					<li><a href="#">Work</a></li>
+					<li><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+		</div>
+	</header><!-- Header End -->
+	
+	<div class="col-xs-2" style="background:#977dca;min-height:1200px;"><br>
+		
+		<div class="col-lg-9">
+			<div class="input-group">
+				<input type="text" class="form-control" placeholder="Search for...">
+				<span class="input-group-btn">
+					<button class="btn btn-default" type="button">Search!</button><br>
+				</div><!-- /.col-lg-6 -->
+			</span><br><br><br> 
+
+			<p class="solid; background:#977dca;" form action="demo_form.asp" method="get"> 
+				<p><font color="#FFFFFF">
+					<input type="checkbox" name="checkbox" value="Short"> Short  
+					<input type="checkbox" name="checkbox" value="Drama"> Drama<br>
+					<input type="checkbox" name="checkbox" value="Comedy"> Comedy 
+					<input type="checkbox" name="checkbox" value="Romance"> Romance<br>
+					<input type="checkbox" name="checkbox" value="Adult"> Adult					
+					<input type="checkbox" name="checkbox" value="Documentary"> Documentary<br>
+					<input type="checkbox" name="checkbox" value="Thriller"> Thriller 
+					<input type="checkbox" name="checkbox" value="Family"> Family<br>
+					<input type="checkbox" name="checkbox" value="Western"> Western
+					<input type="checkbox" name="checkbox" value="Crime"> Crime<br>
+					<input type="checkbox" name="checkbox" value="Music"> Music
+					<input type="checkbox" name="checkbox" value="Action"> Action<br>
+					<input type="checkbox" name="checkbox" value="Horror"> Horror
+					<input type="checkbox" name="checkbox" value="Musical"> Musical<br>
+					<input type="checkbox" name="checkbox" value="Sci-Fi"> Sci-Fi
+					<input type="checkbox" name="checkbox" value="Advanture"> Advanture<br>
+					<input type="checkbox" name="checkbox" value="War"> War
+					<input type="checkbox" name="checkbox" value="Animation"> Animation<br>
+					<input type="checkbox" name="checkbox" value="Mystery"> Mystery
+					<input type="checkbox" name="checkbox" value="Fantasy"> Fantasy<br>
+					<input type="checkbox" name="checkbox" value="Film-Noir"> Film-Noir <br></p>
+					<input type="submit" onclick="createGraph()" class="btn btn-default navbar-btn" value
+                    ="Submit">
+                </form> </p>
+
+                <p><br><br>
+                   <label for="year" style="color:FFFFFF;" >Years:</label>
+                   <input type="text" style="background-color:#977dca;" id="year" readonly style=
+                   "color:#FFFFFF; font-weight:bold;">
+               </p>
+
+               <div id="slider-range">
+               </div><br>
+
+               
+               
+               <div class="btn-group-sm" role="group" aria-label="Node size">
+                <label for="year" style="color:FFFFFF;" >Node Size:</label><br>
+                <button type="button" class="btn btn-default" onclick="Nodesize('Large')">Large
+                </button>
+                <button type="button" class="btn btn-default" onclick="Nodesize('Medium')">Medium
+                </button>
+                <button type="button" class="btn btn-default" onclick="Nodesize('Small')">Small
+                </button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <div id="container">
+
+    </div>
+</div>
+<!--<img src="img/download.jpg" alt="...">-->
+
+
+
+<script>
+var graph;
+
+
+var genreNodeSizeScale = 1;
+var genreNodeLinkStrengthScale = 1;
+var genreNodeDistanceScale = 1;
+var genreNodeMaxValue = 10;
+
+var actorNodeSizeScale = 1;
+var actorNodeLinkStrengthScale = 1;
+var actorNodeDistanceScale = 1;
+
+
+var maxWidthValue = 1000;
+var maxNodeSize = 20;
+
+
+var gravityscale = 1;
+
+var widthscale = d3.scale.linear()
+.domain([1, maxWidthValue])
+.range([1, 3]);
+
+var nodescale = d3.scale.linear()
+.domain([1, maxNodeSize])
+.range([10, 30]);
+
+
+var years = [1920, 2020]
+var genre = [
+{
+    "name": "Documentary",
+    "size": 7
+}, {
+    "name": "Short",
+    "size": 2
+},
+{
+    "name": "Comedy",
+    "size": 3
+}, 
+{
+    "name": "Drama",   
+    "size": 4
+}]
+
+
+
+var data = {
+    "nodes": [{
+     "id": "Mark",
+     "type": "actor",
+     "size": 5
+ }, {
+     "id": "Stephen",
+     "type": "actor",
+     "size": 8
+ }, {
+    "id": "Matt",
+    "type": "actor",
+    "size": 4
+}, {
+    "id": "Elizabeth",
+    "type": "actor",
+    "size": 3
+}, {
+    "id": "Jennifer",
+    "type": "actor",
+    "size": 2
+}],
+"links": [{
+    "source": "Drama",
+    "target": "Stephen",
+    "value": 10, 
+    "attract" : "true"
+}, {
+    "source": "Drama",
+    "target": "Jennifer",
+    "value": 1, 
+    "attract" : "true"
+}, {
+    "source": "Comedy",
+    "target": "Elizabeth",
+    "value": 10, 
+    "attract" : "true"
+}, {
+    "source": "Documentary",
+    "target": "Matt",
+    "value": 10, 
+    "attract" : "true"
+}, {
+    "source": "Short",
+    "target": "Stephen",
+    "value": 1, 
+    "attract" : "true"
+}, {
+    "source": "Drama",
+    "target": "Jennifer",
+    "value": 10, 
+    "attract" : "true"
+}]
+}
+
+
+
+function myGraph() {
+
+        // Add and remove elements on the graph object
+        this.addNode = function (id, type, size) {
+            nodes.push({"id": id, "type":type, "size":size});
+            update();
+        };
+
+        this.removeNode = function (id) {
+            var i = 0;
+            var n = findNode(id);
+            while (i < links.length) {
+                if ((links[i]['source'] == n) || (links[i]['target'] == n)) {
+                    links.splice(i, 1);
+                }
+                else i++;
+            }
+            nodes.splice(findNodeIndex(id), 1);
+            update();
+        };
+
+        this.removeLink = function (source, target) {
+            for (var i = 0; i < links.length; i++) {
+                if (links[i].source.id == source && links[i].target.id == target) {
+                    links.splice(i, 1);
+                    break;
+                }
+            }
+            update();
+        };
+
+        this.removeallLinks = function () {
+            links.splice(0, links.length);
+            update();
+        };
+
+        this.removeAllNodes = function () {
+            nodes.splice(0, links.length);
+            update();
+        };
+
+        this.addLink = function (source, target, value, attract) {
+            links.push({"source": findNode(source), "target": findNode(target), "value": value, "attract"
+                :attract});
+            update();
+        };
+
+        var findNode = function (id) {
+            for (var i in nodes) {
+                if (nodes[i]["id"] === id) return nodes[i];
+            }
+            ;
+        };
+
+        var findNodeIndex = function (id) {
+            for (var i = 0; i < nodes.length; i++) {
+                if (nodes[i].id == id) {
+                    return i;
+                }
+            }
+            ;
+        };
+
+        // set up the D3 visualisation in the specified element
+        
+        var w = 960,
+        h = 450;
+
+        var color = d3.scale.category10();
+
+        var vis = d3.select("#container")
+        .append("svg:svg")
+        .attr("width", w)
+        .attr("height", h)
+        .attr("id", "svg")
+        .attr("pointer-events", "all")
+        .attr("viewBox", "0 0 " + w + " " + h)
+        .attr("perserveAspectRatio", "xMinYMid")
+        .append('svg:g');
+
+        var force = d3.layout.force();
+
+        var nodes = force.nodes(),
+        links = force.links();
+
+
+        var nodeType = function (type) {
+            if(type == "genre") {
+                return "svg:circle";
+            }
+            return "svg:rect";
+        }
+
+
+        var update = function () {
+            var link = vis.selectAll("line")
+            .data(links, function (d) {
+                return d.source.id + "-" + d.target.id;
+            });
+
+
+
+
+            link.enter().append("line")
+            .attr("id", function (d) {
+                return d.source.id + "-" + d.target.id;
+            })
+            .style("stroke-width", function (d) {
+                return widthscale(d.value) + 'px';
+            })
+            .attr("class", "link");
+            link.append("title")
+            .text(function (d) {
+                return d.value;
+            });
+            link.exit().remove();
+
+
+            /*
+
+            d3.selectAll(".actor").append("rect")
+            .attr("width", function (d) { return d.size})
+            .attr("height", function (d) { return d.size})
+            .attr("class", function (d) {
+                return "node type" + d.type
+            });
+
+            d3.selectAll(".genre").append("circle")
+            .attr("class", function (d) {
+                return "node type" + d.type
+            })
+            .attr("r", function (d) {
+                return function (d) { return d.size
+            }})
+            .call(force.drag);
+
+            */
+
+            
+
+            var node = vis.selectAll("g.node")
+            .data(nodes, function (d) {
+                return d.id;
+            });
+
+            var nodeEnter = node.enter().append("g")
+            .attr("class", function (d) {
+                if (d.type === "genre") {
+                   return "genre node";
+               } else {
+                   return "actor node";
+               }
+           })
+            .call(force.drag);
+
+            d3.selectAll(".actor").append("svg:rect")
+            .attr("width", function (d) { return nodescale(d.size)})
+            .attr("height", function (d) { return nodescale(d.size)})
+            .attr("class", function (d) {
+                return "node type" + d.type
+            }).attr("class", "nodeStrokeClass")
+            .attr("fill", function (d) { return color(d.id); });;
+
+            d3.selectAll(".actor").append("svg:text")
+            .attr("class", "textClass")
+            .attr("x", 14)
+            .attr("y", ".31em")
+            .text(function (d) {
+                return d.id;
+            });
+            
+            d3.selectAll(".genre").append("svg:circle")
+            .attr("class", function (d) {
+                return "node type" + d.type
+            })
+            .attr("r", function (d) {
+                return nodescale(d.size)
+            })
+            .attr("class", "nodeStrokeClass")
+            .attr("fill", function (d) { return color(d.id); })
+            .call(force.drag);
+
+            d3.selectAll(".genre").append("svg:text")
+            .attr("class", "textClass")
+            .attr("x", 30)
+            .attr("y", ".31em")
+            .text(function (d) {
+                return d.id;
+            });
+
+
+            
+
+
+            node.exit().remove();
+
+            force.on("tick", function () {
+
+                node.attr("transform", function (d) {
+                    return "translate(" + d.x + "," + d.y + ")";
+                });
+
+                link.attr("x1", function (d) {
+                    return d.source.x;
+                })
+                .attr("y1", function (d) {
+                    return d.source.y;
+                })
+                .attr("x2", function (d) {
+                    return d.target.x;
+                })
+                .attr("y2", function (d) {
+                    return d.target.y;
+                });
+            });
+
+            // Restart the force layout. //old gravity  .gravity(.01)
+            var k = Math.sqrt(nodes.length / (w * h));
+            
+
+            force
+            .gravity(k*gravityscale)
+            .charge(function(d) {
+              if(d.attract === 'false') {
+                return  -10/k;
+            }
+            else {
+
+                return -10/k;
+            }
+        })
+            .friction(0)
+            .linkDistance( function(d) { 
+                if(d.attract === 'false') {
+
+                    return  (d.value*k*100);
+                }
+                else {
+                    var dist = (1/(d.value*d.value)*3)
+                    return (1/d.value)*k*100;
+                }
+            }
+            )
+            .linkStrength( function (d) { 
+                if (d.attract === 'false') { 
+
+                    return genreNodeLinkStrengthScale;
+                }
+
+                return (d.value/maxWidthValue)*actorNodeLinkStrengthScale;
+
+            })
+            .size([w, h])
+            .start();
+            d3.selectAll("div.a").append("svg")
+        };
+
+
+        // Make it all go
+        update();
+    }
+
+    function Nodesize(size){
+       
+        if (size==='Small'){
+           
+           genreNodeSizeScale=0.2;}
+           
+           else if (size==='Medium'){
+            genreNodeSizeScale=0.5;}
+            
+            else if (size==="Large"){
+                genreNodeSizeScale=1;}
+                
+                createGraph(); }
+                
+                
+                function createGraph() {
+                    var container = document.getElementById("container");
+                    container.innerHTML='';
+                    var yearRange = document.getElementById("year");
+                    var yearValue = yearRange.value;
+                    var res = yearValue.split(",");
+                    years = [res[0], res[1]];
+                    
+
+                    drawGraph();
+                }
+
+
+                function drawGraph() {
+  //      var parent = document.getElementById("body");
+   //     var child = document.getElementById("svg");
+    //    parent.removeChild(child);
+    
+   // document.write(years.value);
+   var genres = document.getElementsByName("checkbox");
+    //    console.log("name" + genres[1].name +": value:"+ genres[1].value);
+    graph = new myGraph("#svgdiv");
+
+      //  var parent = document.getElementById("graphDiv");
+       // parent.appendChild(graph);
+//        for (var i = data.nodes.length - 1; i >= 0; i--) {
+ //           graph.addNode(data.nodes[i].id, data.nodes[i].type, data.nodes[i].size);
+  //      };
+  for(var i = 0; i < genres.length; i++) {
+    if(genres[i].checked) {
+        graph.addNode(genres[i].value, 'genre', 20*genreNodeSizeScale);
+              //  console.log("name" + genres[i].value);
+          }
+      }
+
+
+      for(var i = genre.length - 1; i >=0; i--) {
+        graph.addNode(genre[i].name, 'genre', genre[i].size);
+    }
+
+    for(var i = genre.length - 1; i >=0; i--) {
+        for(var j = genre.length - 1; j >=0; j--) {
+            if(i != j) {
+                graph.addLink(genre[i].name, genre[j].name, '1000', 'false');
+            }
+        }
+    }
+
+    //    for (var i = data.links.length - 1; i >= 0; i--) {
+    //        graph.addLink(data.links[i].source, data.links[i].target, data.links[i].value);
+     //   };
+     // graph.addNode('Ryan', 'actor', 1);
+     // graph.addLink('Drama', 'Ryan', '1', 'true');
+     // graph.addLink('Documentary', 'Ryan', '10', 'true');
+     // graph.addLink('Short', 'Ryan', '100', 'true');
+     // graph.addLink('Comedy', 'Ryan', '1000', 'true');
+     keepNodesOnTop();
+
+    /*    graph.addNode('Sophia', 'actor', 5);
+        graph.addNode('Daniel', 'actor', 5);
+        
+        graph.addNode('Lila', 'actor', 5);
+        graph.addNode('Suzie', 'actor', 5);
+        graph.addNode('Riley', 'actor', 5);
+        graph.addNode('Grace', 'actor', 5);
+        graph.addNode('Dylan', 'actor', 5);
+        graph.addNode('Mason', 'actor', 5);
+        graph.addNode('Emma', 'actor', 5);
+        graph.addNode('Alex', 'actor', 10);
+   //     graph.addLink('Short', 'Drama', '20', 'false');
+        graph.addLink('Short', 'Ryan', '20', 'true');
+   //     graph.addLink('Documentary', 'Drama', '20', 'false');
+    //    graph.addLink('Documentary', 'Short', '20', 'false');
+        graph.addLink('Drama', 'Lila', '30', 'true');
+        graph.addLink('Comedy', 'Suzie', '20', 'true');
+        graph.addLink('Short', 'Riley', '90', 'true');
+        graph.addLink('Short', 'Grace', '30', 'true');
+        graph.addLink('Short', 'Dylan', '1', 'true');
+        graph.addLink('Drama', 'Mason', '20', 'true');
+        graph.addLink('Drama', 'Emma', '20', 'true');
+        graph.addLink('Drama', 'Mason', '10', 'true');
+        keepNodesOnTop();
+
+        // callback for the changes in the network
+        var step = -1;
+        function nextval()
+        {
+            step++;
+            return 2000 + (150*step); // initial time, wait time
+        }
+
+        setTimeout(function() {
+            graph.addLink('Documentary', 'Sophia', '20', 'true');
+            keepNodesOnTop();
+        }, nextval());
+
+        setTimeout(function() {
+            graph.addLink('Short', 'Daniel', '20', 'true');
+            keepNodesOnTop();
+        }, nextval());
+
+        setTimeout(function() {
+            graph.addLink('Drama', 'Alex', '10', 'true');
+            keepNodesOnTop();
+        }, nextval());
+
+        setTimeout(function() {
+            graph.addLink('Drama', 'Daniel', '30', 'true');
+            keepNodesOnTop();
+        }, nextval());
+
+        setTimeout(function() {
+          //  graph.removeLink('Dylan', 'Mason');
+            graph.addLink('Comedy', 'Riley', '1', 'true');
+            keepNodesOnTop();
+        }, nextval());
+
+        setTimeout(function() {
+        //    graph.removeLink('Dylan', 'Emma');
+            graph.addLink('Comedy', 'Emma', '8', 'true');
+            keepNodesOnTop();
+        }, nextval());
+*/
+}
+
+drawGraph();
+
+    // because of the way the network is created, nodes are created first, and links second,
+    // so the lines were on top of the nodes, this just reorders the DOM to put the svg:g on top
+    function keepNodesOnTop() {
+        $(".nodeStrokeClass").each(function( index ) {
+            var gnode = this.parentNode;
+            gnode.parentNode.appendChild(gnode);
+        });
+    }
+    function addNodes() {
+        d3.select("svg")
+        .remove();
+        drawGraph();
+    }
+
+
+    </script>
+    
+</div>
+</body>
+</html>
