@@ -67,8 +67,10 @@ drawGraph();
 $('#intervalForm').change(drawGraph);
 
 function drawGraph() {
+	var interval = Number($('input[name="interval"]:checked').val());
+	console.log("Draw Graph called.");
+	$('svg').remove();
 	d3.json(getPath(interval), function(data) {
-		$('svg').remove();
 		var svg = d3.select("body").append("svg")
 			.attr("width", width + margin.left + margin.right)
 			.attr("height", height + margin.top + margin.bottom)
