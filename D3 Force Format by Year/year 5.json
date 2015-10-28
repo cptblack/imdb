@@ -1,0 +1,7 @@
+{
+  "nodes": [
+    {"id":"n2243", "type":"movie", "title":"3 Kronen", "year":"5", "genre":"Short"},
+    {"id":"n381423", "type":"movie", "title":"Wollust, oder Gutknecht Tonis Traum", "year":"5", "genre":"Drama"}  ],
+  "links": [
+  ]
+}
