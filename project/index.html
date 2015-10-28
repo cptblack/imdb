@@ -5,6 +5,16 @@
 	<script src="http://d3js.org/d3.v3.min.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 	<style>
+	
+	<style type="text/css">
+	body{font-family: Arial, sans-serif;font-size:10px;}
+	.axis path,.axis line {fill: none;stroke:#b6b6b6;shape-rendering: crispEdges;}
+	/*.tick line{fill:none;stroke:none;}*/
+	.tick text{fill:#999;}
+	g.journal.active{cursor:pointer;}
+	text.label{font-size:12px;font-weight:bold;cursor:pointer;}
+	text.value{font-size:12px;font-weight:bold;}
+
 	.link {
 		stroke: #2E2E2E;
 		stroke-width: 2px;
@@ -42,9 +52,9 @@
 	$(function() {
 		$( "#slider-range" ).slider({
 			range: true,
-			min: 1920,
-			max: 2020,
-			values: [ 1920, 2020 ],
+			min: 1915,
+			max: 2015,
+			values: [ 1915, 2015 ],
 			slide: function( event, ui ) {
 				$( "#year" ).val( ui.values[ 0 ] + "," + ui.values[ 1 ] );
 			}
@@ -61,7 +71,6 @@
 p.solid {border-style: solid; text-align:center;}
 
 </style>
-2
 
 <body style="background:#4c347b;min-width:300px"" id="body" >
 	
@@ -91,31 +100,33 @@ p.solid {border-style: solid; text-align:center;}
 
 			<p class="solid; background:#977dca;" form action="demo_form.asp" method="get"> 
 				<p><font color="#FFFFFF">
-					<input type="checkbox" name="checkbox" value="Short"> Short  
+					<input type="checkbox" name="checkbox" value="Short"> Short<br> 
 					<input type="checkbox" name="checkbox" value="Drama"> Drama<br>
-					<input type="checkbox" name="checkbox" value="Comedy"> Comedy 
+					<input type="checkbox" name="checkbox" value="Comedy"> Comedy<br>
 					<input type="checkbox" name="checkbox" value="Romance"> Romance<br>
-					<input type="checkbox" name="checkbox" value="Adult"> Adult					
+					<input type="checkbox" name="checkbox" value="Adult"> Adult<br>					
 					<input type="checkbox" name="checkbox" value="Documentary"> Documentary<br>
-					<input type="checkbox" name="checkbox" value="Thriller"> Thriller 
+					<input type="checkbox" name="checkbox" value="Thriller"> Thriller<br> 
 					<input type="checkbox" name="checkbox" value="Family"> Family<br>
-					<input type="checkbox" name="checkbox" value="Western"> Western
+					<input type="checkbox" name="checkbox" value="Western"> Western<br>
 					<input type="checkbox" name="checkbox" value="Crime"> Crime<br>
-					<input type="checkbox" name="checkbox" value="Music"> Music
+					<input type="checkbox" name="checkbox" value="Music"> Music<br>
 					<input type="checkbox" name="checkbox" value="Action"> Action<br>
-					<input type="checkbox" name="checkbox" value="Horror"> Horror
+					<input type="checkbox" name="checkbox" value="Horror"> Horror<br>
 					<input type="checkbox" name="checkbox" value="Musical"> Musical<br>
-					<input type="checkbox" name="checkbox" value="Sci-Fi"> Sci-Fi
+					<input type="checkbox" name="checkbox" value="Sci-Fi"> Sci-Fi<br>
 					<input type="checkbox" name="checkbox" value="Advanture"> Advanture<br>
-					<input type="checkbox" name="checkbox" value="War"> War
+					<input type="checkbox" name="checkbox" value="War"> War<br>
 					<input type="checkbox" name="checkbox" value="Animation"> Animation<br>
-					<input type="checkbox" name="checkbox" value="Mystery"> Mystery
+					<input type="checkbox" name="checkbox" value="Mystery"> Mystery<br>
 					<input type="checkbox" name="checkbox" value="Fantasy"> Fantasy<br>
 					<input type="checkbox" name="checkbox" value="Film-Noir"> Film-Noir <br></p>
-					<input type="submit" onclick="createGraph()" class="btn btn-default navbar-btn" value
-="Submit">
+					<input type="submit" onclick="createGraph()" class="btn btn-default navbar-btn" value="Submit"> 
 				</form> </p>
-
+          
+				
+				
+				
 				<p><br><br>
 					<label for="year" style="color:FFFFFF;" >Years:</label>
 					<input type="text" style="background-color:#977dca;" id="year" readonly style=
@@ -140,15 +151,8 @@ p.solid {border-style: solid; text-align:center;}
 			</div>
 		</div>
 	
-
-		<div id="container">
-
-        </div>
-    </div>
-
-
-
-    <script>
+    <div class="col-xs-10 col-lg-8"  Style="min-height:1200px;">
+	<script>
     var graph;
     
 
@@ -674,6 +678,12 @@ drawGraph();
 
 
     </script>
+    
+	
+    </div>
+
+
+
     
 </div>
 </body>
