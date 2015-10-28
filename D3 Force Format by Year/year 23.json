@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n170384", "type":"movie", "title":"Ivan Martin Jirous", "year":"23", "genre":"Documentary"}  ],
   "links": [
-    {"source":"n170384", target:"n170384"}  ]
+    {"source":"n170384", "target":"n170384"}  ]
 }

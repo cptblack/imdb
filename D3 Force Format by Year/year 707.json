@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n44644", "type":"movie", "title":"Boeing", "year":"707", "genre":"Comedy"}  ],
   "links": [
-    {"source":"n44644", target:"n44644"}  ]
+    {"source":"n44644", "target":"n44644"}  ]
 }

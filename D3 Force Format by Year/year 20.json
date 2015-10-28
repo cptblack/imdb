@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n273036", "type":"movie", "title":"Presa di Roma", "year":"20", "genre":"Short"}  ],
   "links": [
-    {"source":"n273036", target:"n273036"}  ]
+    {"source":"n273036", "target":"n273036"}  ]
 }

@@ -7,7 +7,7 @@
     {"id":"n47230", "type":"movie", "title":"Boxing", "year":"1892", "genre":"Family"},
     {"id":"n68648", "type":"movie", "title":"Clown et ses chiens, Le", "year":"1892", "genre":"Short"}  ],
   "links": [
-    {"source":"n273979", target:"n273979"},
-    {"source":"n382990", target:"n382990"},
-    {"source":"n47230", target:"n47230"}  ]
+    {"source":"n273979", "target":"n273979"},
+    {"source":"n382990", "target":"n382990"},
+    {"source":"n47230", "target":"n47230"}  ]
 }

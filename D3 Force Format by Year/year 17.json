@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n191192", "type":"movie", "title":"Laila", "year":"17", "genre":"Short"}  ],
   "links": [
-    {"source":"n191192", target:"n191192"}  ]
+    {"source":"n191192", "target":"n191192"}  ]
 }

@@ -7,8 +7,8 @@
     {"id":"n45003", "type":"movie", "title":"Bolshaya zhizn", "year":"1", "genre":"Drama"},
     {"id":"n6400", "type":"movie", "title":"Actualidad de la máquina herramienta", "year":"1", "genre":"Documentary"}  ],
   "links": [
-    {"source":"n255776", target:"n255776"},
-    {"source":"n285161", target:"n285161"},
-    {"source":"n45003", target:"n45003"},
-    {"source":"n6400", target:"n6400"}  ]
+    {"source":"n255776", "target":"n255776"},
+    {"source":"n285161", "target":"n285161"},
+    {"source":"n45003", "target":"n45003"},
+    {"source":"n6400", "target":"n6400"}  ]
 }

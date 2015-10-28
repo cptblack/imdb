@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n236360", "type":"movie", "title":"Napoléon Bourassa", "year":"1827", "genre":"Short"}  ],
   "links": [
-    {"source":"n236360", target:"n236360"}  ]
+    {"source":"n236360", "target":"n236360"}  ]
 }

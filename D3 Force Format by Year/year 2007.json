@@ -15,13 +15,13 @@
     {"id":"n96735", "type":"movie", "title":"DragonBall Z", "year":"2007", "genre":"Sci-Fi"},
     {"id":"n96842", "type":"movie", "title":"Dramarama", "year":"2007", "genre":"Drama"}  ],
   "links": [
-    {"source":"n111807", target:"n111807"},
-    {"source":"n145267", target:"n145267"},
-    {"source":"n164731", target:"n164731"},
-    {"source":"n282699", target:"n282699"},
-    {"source":"n308743", target:"n308743"},
-    {"source":"n311592", target:"n311592"},
-    {"source":"n322746", target:"n322746"},
-    {"source":"n47007", target:"n47007"},
-    {"source":"n96842", target:"n96842"}  ]
+    {"source":"n111807", "target":"n111807"},
+    {"source":"n145267", "target":"n145267"},
+    {"source":"n164731", "target":"n164731"},
+    {"source":"n282699", "target":"n282699"},
+    {"source":"n308743", "target":"n308743"},
+    {"source":"n311592", "target":"n311592"},
+    {"source":"n322746", "target":"n322746"},
+    {"source":"n47007", "target":"n47007"},
+    {"source":"n96842", "target":"n96842"}  ]
 }

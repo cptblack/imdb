@@ -4,5 +4,5 @@
     {"id":"n239850", "type":"movie", "title":"Newark Athlete", "year":"1891", "genre":"Short"},
     {"id":"n89810", "type":"movie", "title":"Dickson Greeting", "year":"1891", "genre":"Short"}  ],
   "links": [
-    {"source":"n89810", target:"n89810"}  ]
+    {"source":"n89810", "target":"n89810"}  ]
 }

@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n108007", "type":"movie", "title":"Espectro siete", "year":"7", "genre":"Short"}  ],
   "links": [
-    {"source":"n108007", target:"n108007"}  ]
+    {"source":"n108007", "target":"n108007"}  ]
 }
