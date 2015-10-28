@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n20709", "type":"movie", "title":"Architecture religieuse en Canada", "year":"1640", "genre":"Short"}  ],
   "links": [
-  ]
+    {"source":"n20709", target:"n20709"}  ]
 }

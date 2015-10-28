@@ -2,5 +2,5 @@
   "nodes": [
     {"id":"n213137", "type":"movie", "title":"March of Crime", "year":"2", "genre":"Short"}  ],
   "links": [
-  ]
+    {"source":"n213137", target:"n213137"}  ]
 }
