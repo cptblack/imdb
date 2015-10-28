@@ -11,8 +11,8 @@
     {"id":"8", "type":"actor", "name":"Zajchikov, Vasili"},
     {"id":"9", "type":"actor", "name":"Cuetos, Cuno"}  ],
   "links": [
-    {"source":"6", "target":"1"},
-    {"source":"7", "target":"2"},
-    {"source":"8", "target":"4"},
-    {"source":"9", "target":"5"}  ]
+    {"source":6, "target":1},
+    {"source":7, "target":2},
+    {"source":8, "target":4},
+    {"source":9, "target":5}  ]
 }

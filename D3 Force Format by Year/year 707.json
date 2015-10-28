@@ -3,5 +3,5 @@
     {"id":"0", "type":"movie", "title":"Boeing", "year":"707", "genre":"Comedy"},
     {"id":"1", "type":"actor", "name":"Study, Lomax"}  ],
   "links": [
-    {"source":"1", "target":"0"}  ]
+    {"source":1, "target":0}  ]
 }

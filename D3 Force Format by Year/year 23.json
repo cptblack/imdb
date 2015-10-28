@@ -3,5 +3,5 @@
     {"id":"0", "type":"movie", "title":"Ivan Martin Jirous", "year":"23", "genre":"Documentary"},
     {"id":"1", "type":"actor", "name":"Jirous, Ivan M."}  ],
   "links": [
-    {"source":"1", "target":"0"}  ]
+    {"source":1, "target":0}  ]
 }

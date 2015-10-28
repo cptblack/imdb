@@ -3,5 +3,5 @@
     {"id":"0", "type":"movie", "title":"March of Crime", "year":"2", "genre":"Short"},
     {"id":"1", "type":"actor", "name":"Walsh, Jerome"}  ],
   "links": [
-    {"source":"1", "target":"0"}  ]
+    {"source":1, "target":0}  ]
 }

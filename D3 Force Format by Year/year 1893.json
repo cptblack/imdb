@@ -3,5 +3,5 @@
     {"id":"0", "type":"movie", "title":"Blacksmith Scene", "year":"1893", "genre":"Short"},
     {"id":"1", "type":"actor", "name":"Ott, John (II)"}  ],
   "links": [
-    {"source":"1", "target":"0"}  ]
+    {"source":1, "target":0}  ]
 }

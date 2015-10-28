@@ -10,7 +10,7 @@
     {"id":"7", "type":"actor", "name":"Welling, Mark"},
     {"id":"8", "type":"actor", "name":"McAuliffe, Jack"}  ],
   "links": [
-    {"source":"6", "target":"1"},
-    {"source":"7", "target":"3"},
-    {"source":"8", "target":"4"}  ]
+    {"source":6, "target":1},
+    {"source":7, "target":3},
+    {"source":8, "target":4}  ]
 }

@@ -5,7 +5,7 @@
     {"id":"2", "type":"movie", "title":"Monkeyshines, No. 3", "year":"1890", "genre":"Short"},
     {"id":"3", "type":"actor", "name":"Albanese, G. Sacco"}  ],
   "links": [
-    {"source":"3", "target":"0"},
-    {"source":"3", "target":"1"},
-    {"source":"3", "target":"2"}  ]
+    {"source":3, "target":0},
+    {"source":3, "target":1},
+    {"source":3, "target":2}  ]
 }

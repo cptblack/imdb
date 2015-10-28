@@ -4,5 +4,5 @@
     {"id":"1", "type":"movie", "title":"Wollust, oder Gutknecht Tonis Traum", "year":"5", "genre":"Drama"},
     {"id":"2", "type":"actor", "name":"Lichtenhahn, Fritz"}  ],
   "links": [
-    {"source":"2", "target":"1"}  ]
+    {"source":2, "target":1}  ]
 }

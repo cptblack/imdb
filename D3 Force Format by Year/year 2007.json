@@ -24,13 +24,13 @@
     {"id":"21", "type":"actor", "name":"Damon, Matt"},
     {"id":"22", "type":"actor", "name":"Lloyd, Eric (I)"}  ],
   "links": [
-    {"source":"14", "target":"0"},
-    {"source":"15", "target":"1"},
-    {"source":"16", "target":"2"},
-    {"source":"17", "target":"3"},
-    {"source":"18", "target":"4"},
-    {"source":"19", "target":"5"},
-    {"source":"20", "target":"6"},
-    {"source":"21", "target":"11"},
-    {"source":"22", "target":"13"}  ]
+    {"source":14, "target":0},
+    {"source":15, "target":1},
+    {"source":16, "target":2},
+    {"source":17, "target":3},
+    {"source":18, "target":4},
+    {"source":19, "target":5},
+    {"source":20, "target":6},
+    {"source":21, "target":11},
+    {"source":22, "target":13}  ]
 }

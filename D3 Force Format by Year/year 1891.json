@@ -5,5 +5,5 @@
     {"id":"2", "type":"movie", "title":"Dickson Greeting", "year":"1891", "genre":"Short"},
     {"id":"3", "type":"actor", "name":"Dickson, William K.L."}  ],
   "links": [
-    {"source":"3", "target":"2"}  ]
+    {"source":3, "target":2}  ]
 }
