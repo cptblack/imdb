@@ -1,14 +1,18 @@
 {
   "nodes": [
-    {"id":"n255344", "type":"movie", "title":"Où va la ville?", "year":"1", "genre":"Short"},
-    {"id":"n255776", "type":"movie", "title":"Padeniye Berlina", "year":"1", "genre":"Drama"},
-    {"id":"n285161", "type":"movie", "title":"Regards sur l&apos;occultisme", "year":"1", "genre":"Documentary"},
-    {"id":"n392273", "type":"movie", "title":"Éibar industrial", "year":"1", "genre":"Documentary"},
-    {"id":"n45003", "type":"movie", "title":"Bolshaya zhizn", "year":"1", "genre":"Drama"},
-    {"id":"n6400", "type":"movie", "title":"Actualidad de la máquina herramienta", "year":"1", "genre":"Documentary"}  ],
+    {"id":"0", "type":"movie", "title":"Où va la ville?", "year":"1", "genre":"Short"},
+    {"id":"1", "type":"movie", "title":"Padeniye Berlina", "year":"1", "genre":"Drama"},
+    {"id":"2", "type":"movie", "title":"Regards sur l&apos;occultisme", "year":"1", "genre":"Documentary"},
+    {"id":"3", "type":"movie", "title":"Éibar industrial", "year":"1", "genre":"Documentary"},
+    {"id":"4", "type":"movie", "title":"Bolshaya zhizn", "year":"1", "genre":"Drama"},
+    {"id":"5", "type":"movie", "title":"Actualidad de la máquina herramienta", "year":"1", "genre":"Documentary"},
+    {"id":"6", "type":"actor", "name":"Zolar, Z."},
+    {"id":"7", "type":"actor", "name":"Hébert, Paul"},
+    {"id":"8", "type":"actor", "name":"Zajchikov, Vasili"},
+    {"id":"9", "type":"actor", "name":"Cuetos, Cuno"}  ],
   "links": [
-    {"source":"n255776", "target":"n255776"},
-    {"source":"n285161", "target":"n285161"},
-    {"source":"n45003", "target":"n45003"},
-    {"source":"n6400", "target":"n6400"}  ]
+    {"source":"6", "target":"1"},
+    {"source":"7", "target":"2"},
+    {"source":"8", "target":"4"},
+    {"source":"9", "target":"5"}  ]
 }

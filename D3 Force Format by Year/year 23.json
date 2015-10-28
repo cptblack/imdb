@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n170384", "type":"movie", "title":"Ivan Martin Jirous", "year":"23", "genre":"Documentary"}  ],
+    {"id":"0", "type":"movie", "title":"Ivan Martin Jirous", "year":"23", "genre":"Documentary"},
+    {"id":"1", "type":"actor", "name":"Jirous, Ivan M."}  ],
   "links": [
-    {"source":"n170384", "target":"n170384"}  ]
+    {"source":"1", "target":"0"}  ]
 }

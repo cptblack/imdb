@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n191192", "type":"movie", "title":"Laila", "year":"17", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Laila", "year":"17", "genre":"Short"},
+    {"id":"1", "type":"actor", "name":"Årlin, Georg"}  ],
   "links": [
-    {"source":"n191192", "target":"n191192"}  ]
+    {"source":"1", "target":"0"}  ]
 }

@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n236360", "type":"movie", "title":"Napoléon Bourassa", "year":"1827", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Napoléon Bourassa", "year":"1827", "genre":"Short"},
+    {"id":"1", "type":"actor", "name":"Millette, Jean-Louis"}  ],
   "links": [
-    {"source":"n236360", "target":"n236360"}  ]
+    {"source":"1", "target":"0"}  ]
 }

@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n273036", "type":"movie", "title":"Presa di Roma", "year":"20", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Presa di Roma", "year":"20", "genre":"Short"},
+    {"id":"1", "type":"actor", "name":"Rosaspina, Carlo"}  ],
   "links": [
-    {"source":"n273036", "target":"n273036"}  ]
+    {"source":"1", "target":"0"}  ]
 }

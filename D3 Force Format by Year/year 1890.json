@@ -1,10 +1,11 @@
 {
   "nodes": [
-    {"id":"n226589", "type":"movie", "title":"Monkeyshines, No. 1", "year":"1890", "genre":"Short"},
-    {"id":"n226590", "type":"movie", "title":"Monkeyshines, No. 2", "year":"1890", "genre":"Short"},
-    {"id":"n226591", "type":"movie", "title":"Monkeyshines, No. 3", "year":"1890", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Monkeyshines, No. 1", "year":"1890", "genre":"Short"},
+    {"id":"1", "type":"movie", "title":"Monkeyshines, No. 2", "year":"1890", "genre":"Short"},
+    {"id":"2", "type":"movie", "title":"Monkeyshines, No. 3", "year":"1890", "genre":"Short"},
+    {"id":"3", "type":"actor", "name":"Albanese, G. Sacco"}  ],
   "links": [
-    {"source":"n226589", "target":"n226589"},
-    {"source":"n226590", "target":"n226590"},
-    {"source":"n226591", "target":"n226591"}  ]
+    {"source":"3", "target":"0"},
+    {"source":"3", "target":"1"},
+    {"source":"3", "target":"2"}  ]
 }

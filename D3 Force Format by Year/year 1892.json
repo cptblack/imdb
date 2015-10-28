@@ -1,13 +1,16 @@
 {
   "nodes": [
-    {"id":"n260665", "type":"movie", "title":"Pauvre Pierrot", "year":"1892", "genre":"Romance"},
-    {"id":"n273979", "type":"movie", "title":"Prince de Galles, Le", "year":"1892", "genre":"Short"},
-    {"id":"n358009", "type":"movie", "title":"Un bon bock", "year":"1892", "genre":"Short"},
-    {"id":"n382990", "type":"movie", "title":"Wrestling", "year":"1892", "genre":"Drama"},
-    {"id":"n47230", "type":"movie", "title":"Boxing", "year":"1892", "genre":"Family"},
-    {"id":"n68648", "type":"movie", "title":"Clown et ses chiens, Le", "year":"1892", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Pauvre Pierrot", "year":"1892", "genre":"Romance"},
+    {"id":"1", "type":"movie", "title":"Prince de Galles, Le", "year":"1892", "genre":"Short"},
+    {"id":"2", "type":"movie", "title":"Un bon bock", "year":"1892", "genre":"Short"},
+    {"id":"3", "type":"movie", "title":"Wrestling", "year":"1892", "genre":"Drama"},
+    {"id":"4", "type":"movie", "title":"Boxing", "year":"1892", "genre":"Family"},
+    {"id":"5", "type":"movie", "title":"Clown et ses chiens, Le", "year":"1892", "genre":"Short"},
+    {"id":"6", "type":"actor", "name":"King Edward VII"},
+    {"id":"7", "type":"actor", "name":"Welling, Mark"},
+    {"id":"8", "type":"actor", "name":"McAuliffe, Jack"}  ],
   "links": [
-    {"source":"n273979", "target":"n273979"},
-    {"source":"n382990", "target":"n382990"},
-    {"source":"n47230", "target":"n47230"}  ]
+    {"source":"6", "target":"1"},
+    {"source":"7", "target":"3"},
+    {"source":"8", "target":"4"}  ]
 }

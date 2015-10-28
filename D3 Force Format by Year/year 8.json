@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n426790", "type":"movie", "title":"&quot;Wednesday 9:30", "year":"8", "genre":"Comedy"}  ],
+    {"id":"0", "type":"movie", "title":"&quot;Wednesday 9:30", "year":"8", "genre":"Comedy"},
+    {"id":"1", "type":"actor", "name":"Sergei, Ivan"}  ],
   "links": [
-    {"source":"n426790", "target":"n426790"}  ]
+    {"source":"1", "target":"0"}  ]
 }

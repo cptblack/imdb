@@ -1,8 +1,9 @@
 {
   "nodes": [
-    {"id":"n218884", "type":"movie", "title":"Men Boxing", "year":"1891", "genre":"Short"},
-    {"id":"n239850", "type":"movie", "title":"Newark Athlete", "year":"1891", "genre":"Short"},
-    {"id":"n89810", "type":"movie", "title":"Dickson Greeting", "year":"1891", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Men Boxing", "year":"1891", "genre":"Short"},
+    {"id":"1", "type":"movie", "title":"Newark Athlete", "year":"1891", "genre":"Short"},
+    {"id":"2", "type":"movie", "title":"Dickson Greeting", "year":"1891", "genre":"Short"},
+    {"id":"3", "type":"actor", "name":"Dickson, William K.L."}  ],
   "links": [
-    {"source":"n89810", "target":"n89810"}  ]
+    {"source":"3", "target":"2"}  ]
 }

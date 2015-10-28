@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n108007", "type":"movie", "title":"Espectro siete", "year":"7", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Espectro siete", "year":"7", "genre":"Short"},
+    {"id":"1", "type":"actor", "name":"Marsillach, Adolfo"}  ],
   "links": [
-    {"source":"n108007", "target":"n108007"}  ]
+    {"source":"1", "target":"0"}  ]
 }

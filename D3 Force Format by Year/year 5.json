@@ -1,7 +1,8 @@
 {
   "nodes": [
-    {"id":"n2243", "type":"movie", "title":"3 Kronen", "year":"5", "genre":"Short"},
-    {"id":"n381423", "type":"movie", "title":"Wollust, oder Gutknecht Tonis Traum", "year":"5", "genre":"Drama"}  ],
+    {"id":"0", "type":"movie", "title":"3 Kronen", "year":"5", "genre":"Short"},
+    {"id":"1", "type":"movie", "title":"Wollust, oder Gutknecht Tonis Traum", "year":"5", "genre":"Drama"},
+    {"id":"2", "type":"actor", "name":"Lichtenhahn, Fritz"}  ],
   "links": [
-    {"source":"n381423", "target":"n381423"}  ]
+    {"source":"2", "target":"1"}  ]
 }

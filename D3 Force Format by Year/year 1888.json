@@ -1,7 +1,7 @@
 {
   "nodes": [
-    {"id":"n293142", "type":"movie", "title":"Roundhay Garden Scene", "year":"1888", "genre":"Short"},
-    {"id":"n350083", "type":"movie", "title":"Traffic Crossing Leeds Bridge", "year":"1888", "genre":"Short"}  ],
+    {"id":"0", "type":"movie", "title":"Roundhay Garden Scene", "year":"1888", "genre":"Short"},
+    {"id":"1", "type":"movie", "title":"Traffic Crossing Leeds Bridge", "year":"1888", "genre":"Short"}  ],
   "links": [
   ]
 }

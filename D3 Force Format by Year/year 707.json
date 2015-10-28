@@ -1,6 +1,7 @@
 {
   "nodes": [
-    {"id":"n44644", "type":"movie", "title":"Boeing", "year":"707", "genre":"Comedy"}  ],
+    {"id":"0", "type":"movie", "title":"Boeing", "year":"707", "genre":"Comedy"},
+    {"id":"1", "type":"actor", "name":"Study, Lomax"}  ],
   "links": [
-    {"source":"n44644", "target":"n44644"}  ]
+    {"source":"1", "target":"0"}  ]
 }
